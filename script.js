@@ -1,9 +1,9 @@
 // v1 
-console.info("v1.3");
+console.info("v1.4");
 var a = [3,0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1],
  b = [-1,-8,-2,"111"],
- c = [1,7,3 , "text"],
- d = [1,undefined,3,5,-3],
+ c = ["111",undefined,1,7.2,3 , "text"],
+ d = ["111",1,undefined,3,5,-3],
  e = [1,NaN,3,5,-3];
 
 
@@ -12,7 +12,7 @@ function res(data){
 var new_arr = [];
 
 	for(var i = 0; i < data.length; i++){
-	  if(Number.isInteger(data[i])){
+		  if( typeof (data[i]) !== 'string' && !isNaN(data[i])){
 
 			new_arr.push(data[i]);
 
@@ -57,7 +57,8 @@ function res_v2(data){
 	var sum = 0;
   
 	for(var i = 0; i < data.length; i++){
-	  if(Number.isInteger(data[i])){
+	  
+	  if( typeof (data[i]) !== 'string' && !isNaN(data[i])){
 	  	if(max < data[i]) max = data[i]; 
 	    if(min > data[i]) min = data[i];
 	    sum = sum + data[i];    
