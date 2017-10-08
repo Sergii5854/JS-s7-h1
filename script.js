@@ -1,28 +1,35 @@
-// Дан масив чисел (положительных, отрицательных и в перемешку)
-// Найти max, min, sum
-// Залить на github решение
-// Нельзя использовать методы массива, а только циклы for, while*
-// Примеры массивов:
-
+// v1 
+console.info("v1.3");
 var a = [3,0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1],
- b = [-1,-8,-2],
- c = [1,7,3],
+ b = [-1,-8,-2,"111"],
+ c = [1,7,3 , "text"],
  d = [1,undefined,3,5,-3],
  e = [1,NaN,3,5,-3];
 
 
 function res(data){
-	var arr = data.filter(function(n){ return( !isNaN(n) ) });
-	var max = Math.max.apply(Math,arr);
-	var min = Math.min.apply(Math,arr);
-	var sum =  Object.values(arr).reduce((a, b) => a + b);
 
-	 return {
-        'max': max,
-        'min': min,
-        'sum': sum
-    }
-	
+var new_arr = [];
+
+	for(var i = 0; i < data.length; i++){
+	  if(Number.isInteger(data[i])){
+
+			new_arr.push(data[i]);
+
+	}
+}   
+
+	// console.log(new_arr);
+	var max = Math.max.apply(Math,new_arr);
+	var min = Math.min.apply(Math,new_arr);
+	var sum =  Object.values(new_arr).reduce((a, b) => a + b);
+
+	return {
+		'max': max,
+		'min': min,
+		'sum': sum
+	}
+
 };
 
 console.table(res(a));
@@ -31,7 +38,10 @@ console.table(res(c));
 console.table(res(d));
 console.table(res(e));
 
+
+// ///////////////////////////
 // v2 
+// ///////////////////////////
 console.info("v2");
 
 var a_v2 = [3,"1112",0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1,"1112"],
@@ -54,9 +64,9 @@ function res_v2(data){
 	  }
 	}
 	 return {
-        'max': max,
-        'min': min,
-        'sum': sum
+    'max': max,
+    'min': min,
+    'sum': sum
     }
 
 }
