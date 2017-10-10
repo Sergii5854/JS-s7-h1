@@ -42,20 +42,21 @@ console.table(res(e));
 // ///////////////////////////
 // v2 
 // ///////////////////////////
-console.info("v2");
+console.info("v2.2");
 
 var a_v2 = [3,"1112",0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1,"1112"],
  b_v2 = [-1,-8,-2,"1112"],
  c_v2 = [1,7,3],
  d_v2 = [1,undefined,3,5,-3],
  e_v2 = [1,"1112",NaN,"1112",3,5,-3],
- f_v2 = ['1',1.23, 'undefined', 'qwe'];
+ f_v2 = ['1',1.23, 'undefined', 'qwe'],
+j_v2 = [undefined, 'test'];
 
 
 function res_v2(data){
 
-	var max = Number.NEGATIVE_INFINITY ;
-	var min= Number.POSITIVE_INFINITY ;
+	var max = null ;
+	var min = null ;
 	var sum = 0;
   
 	for(var i = 0; i < data.length; i++){
@@ -81,3 +82,4 @@ console.log(res_v2(c_v2));
 console.log(res_v2(d_v2));
 console.log(res_v2(e_v2));
 console.log(res_v2(f_v2));
+console.log(res_v2(j_v2));
