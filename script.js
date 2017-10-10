@@ -48,7 +48,9 @@ var a_v2 = [3,"1112",0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1,"1112"],
  b_v2 = [-1,-8,-2,"1112"],
  c_v2 = [1,7,3],
  d_v2 = [1,undefined,3,5,-3],
- e_v2 = [1,"1112",NaN,"1112",3,5,-3];
+ e_v2 = [1,"1112",NaN,"1112",3,5,-3],
+ f_v2 = ['1',1.23, 'undefined', 'qwe'];
+
 
 function res_v2(data){
 
@@ -61,7 +63,8 @@ function res_v2(data){
 	  if( typeof (data[i]) !== 'string' && !isNaN(data[i])){
 	  	if(max < data[i]) max = data[i]; 
 	    if(min > data[i]) min = data[i];
-	    sum = sum + data[i];    
+	    sum = sum + data[i];   
+
 	  }
 	}
 	 return {
@@ -77,3 +80,4 @@ console.log(res_v2(b_v2));
 console.log(res_v2(c_v2));
 console.log(res_v2(d_v2));
 console.log(res_v2(e_v2));
+console.log(res_v2(f_v2));
