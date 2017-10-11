@@ -42,7 +42,7 @@ console.table(res(e));
 // ///////////////////////////
 // v2 
 // ///////////////////////////
-console.info("v2.3");
+console.info("v2.6");
 
 var a_v2 = [3,"1112",0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1,"1112"],
  b_v2 = [-1,-8,-2,"1112"],
@@ -50,21 +50,32 @@ var a_v2 = [3,"1112",0,-5,1,44,-12,3,0,0,1,2,-3,-3,2,1,4,-2-3-1,"1112"],
  d_v2 = [1,undefined,3,5,-3],
  e_v2 = [1,"1112",NaN,"1112",3,5,-3],
  f_v2 = ['1',1.23, 'undefined', 'qwe'],
-j_v2 = [undefined, 'test'];
+ j_v2 = [undefined, 'test'];
 
 
 function res_v2(data){
 
+var new_arr = [];
+
+   for(var i in data) {
+
+        if (!isNaN(data[i]) && typeof (data[i]) === 'number') {
+
+			new_arr.push(data[i]);
+
+	}
+}   
+
 	var max = null ;
 	var min = null ;
-	var sum = 0;
+	var sum = null;
   
-	for(var i = 0; i < data.length; i++){
+	for(var i = 0; i < new_arr.length; i++){
 	  
-	  if( typeof (data[i]) !== 'string' && !isNaN(data[i])){
-	  	if(max < data[i]) max = data[i]; 
-	    if(min > data[i]) min = data[i];
-	    sum = sum + data[i];   
+	  if( typeof (new_arr[i]) !== 'string' && !isNaN(new_arr[i])){
+	  	if(max < new_arr[i] || max === null ) max = new_arr[i]; 
+	    if(min > new_arr[i] || min === null ) min = new_arr[i];
+	    sum = sum + new_arr[i];   
 
 	  }
 	}
